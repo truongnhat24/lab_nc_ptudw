@@ -62,3 +62,10 @@ console.log("Ex03");
 let controller = require("./22880112_Ex03-StudentController");
 controller.generate(students);
 console.log(JSON.stringify(students));
+
+controller.average(students);
+console.log(JSON.stringify(students));
+
+controller.normalize(students);
+console.log(JSON.stringify(students));
+
