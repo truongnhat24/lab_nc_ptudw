@@ -58,14 +58,19 @@ let students = [
 console.log('Ex01');
 console.log(JSON.stringify(students));
 
-console.log("Ex03");
 let controller = require("./22880112_Ex03-StudentController");
 controller.generate(students);
-console.log(JSON.stringify(students));
-
 controller.average(students);
+controller.normalize(students);
+console.log("Ex02 - Ex03");
 console.log(JSON.stringify(students));
 
-controller.normalize(students);
-console.log(JSON.stringify(students));
+(async function () {
+  let slowController = require("./22880112_Ex05-SlowStudentController");
+  await slowController.generate(students);
+  slowController.average(students);
+  slowController.normalize(students);
+  console.log("Ex04 - Ex05");
+  console.log(JSON.stringify(students));
+})();
 

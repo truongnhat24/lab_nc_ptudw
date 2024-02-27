@@ -1,11 +1,10 @@
 let controller = {},
     slowRandom = require("./22880112_Ex04-SlowRandom");
 
-controller.generate = (students) => {
-  for (let i = 0; i < students.length; i++) {
-    let student = students[i];
-    for(let j = 0; j < student.subjects.length; j++){
-      student.subjects[j].grade = slowRandom(0, 10);
+controller.generate = async (students) => {
+  for (let student of students) {
+    for (let subject of student.subjects) {
+      subject.grade = await slowRandom(0, 10);
     }
   }
 }
